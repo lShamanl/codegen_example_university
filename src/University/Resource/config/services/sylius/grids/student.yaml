@@ -1,0 +1,91 @@
+sylius_grid:
+    grids:
+        app_university_student:
+            limits:
+                - 25
+                - 50
+                - 100
+                - 250
+                - 500
+            driver:
+                name: doctrine/orm
+                options:
+                    class: '%app.model.university.student.class%'
+            fields:
+                id:
+                    type: twig
+                    label: app.admin.ui.id
+                    options:
+                        template: '@university/admin/student/link-to-show.html.twig'
+                    sortable: ~
+                createdAt:
+                    type: datetime
+                    label: app.admin.ui.modules.university.student.properties.created_at
+                    sortable: ~
+                updatedAt:
+                    type: datetime
+                    label: app.admin.ui.modules.university.student.properties.updated_at
+                    sortable: ~
+                birthDay:
+                    type: datetime
+                    label: app.admin.ui.modules.university.student.properties.birth_day
+                    sortable: ~
+                firstName:
+                    type: string
+                    label: app.admin.ui.modules.university.student.properties.first_name
+                    sortable: ~
+                lastName:
+                    type: string
+                    label: app.admin.ui.modules.university.student.properties.last_name
+                    sortable: ~
+                middleName:
+                    type: string
+                    label: app.admin.ui.modules.university.student.properties.middle_name
+                    sortable: ~
+                university:
+                    type: twig
+                    label: app.admin.ui.show_university.university
+                    options:
+                        template: '@university/admin/university/link-to-show.html.twig'
+                    sortable: ~
+            sorting:
+                id: desc
+            filters:
+                id:
+                    type: int
+                    label: app.admin.ui.modules.university.student.properties.id
+                    form_options:
+                        label: app.admin.ui.modules.university.student.properties.id
+                        type: equal
+                    options:
+                        type: equal
+                birthDay:
+                    type: date
+                    label: app.admin.ui.modules.university.student.properties.birth_day
+                    options:
+                        format: 'Y-m-d H:i:s'
+                firstName:
+                    type: like
+                    form_options:
+                        field_name: firstName
+                        label: app.admin.ui.modules.university.student.properties.first_name
+                lastName:
+                    type: like
+                    form_options:
+                        field_name: lastName
+                        label: app.admin.ui.modules.university.student.properties.last_name
+                middleName:
+                    type: like
+                    form_options:
+                        field_name: middleName
+                        label: app.admin.ui.modules.university.student.properties.middle_name
+                university:
+                    type: autocomplete
+                    form_options:
+                        field_name: university
+                        label: app.admin.ui.modules.university.student.relations.university
+                        suggester: university_university
+            actions:
+                main:
+                    create:
+                        type: create

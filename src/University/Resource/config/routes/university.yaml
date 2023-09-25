@@ -1,0 +1,14 @@
+app_university_university:
+    resource: |
+        path: university/universities
+        alias: app.university.university
+        only:
+            - index
+            - show
+        redirect: show
+        grid: app_university_university
+        vars:
+            all:
+                templates:
+                    show: '@university/admin/university/show.html.twig'
+    type: sylius.resource

@@ -1,0 +1,5 @@
+doctrine:
+    dbal:
+        types:
+            university_student_id: App\University\Domain\Student\Type\StudentIdType
+            university_university_id: App\University\Domain\University\Type\UniversityIdType

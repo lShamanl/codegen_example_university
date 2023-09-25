@@ -1,0 +1,12 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+    App\University\Domain\Student\StudentRepository:
+        public: true
+    App\University\Domain\University\UniversityRepository:
+        public: true
+    App\University\Domain\Student\Service\StudentNextIdService:
+        public: true
+    App\University\Domain\University\Service\UniversityNextIdService:
+        public: true

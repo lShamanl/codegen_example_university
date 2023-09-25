@@ -1,0 +1,64 @@
+sylius_grid:
+    grids:
+        app_university_university:
+            limits:
+                - 25
+                - 50
+                - 100
+                - 250
+                - 500
+            driver:
+                name: doctrine/orm
+                options:
+                    class: '%app.model.university.university.class%'
+            fields:
+                id:
+                    type: twig
+                    label: app.admin.ui.id
+                    options:
+                        template: '@university/admin/university/link-to-show.html.twig'
+                    sortable: ~
+                createdAt:
+                    type: datetime
+                    label: app.admin.ui.modules.university.university.properties.created_at
+                    sortable: ~
+                updatedAt:
+                    type: datetime
+                    label: app.admin.ui.modules.university.university.properties.updated_at
+                    sortable: ~
+                maxStudents:
+                    type: string
+                    label: app.admin.ui.modules.university.university.properties.max_students
+                    sortable: ~
+                name:
+                    type: string
+                    label: app.admin.ui.modules.university.university.properties.name
+                    sortable: ~
+            sorting:
+                id: desc
+            filters:
+                id:
+                    type: int
+                    label: app.admin.ui.modules.university.university.properties.id
+                    form_options:
+                        label: app.admin.ui.modules.university.university.properties.id
+                        type: equal
+                    options:
+                        type: equal
+                maxStudents:
+                    type: int
+                    label: app.admin.ui.modules.university.university.properties.max_students
+                    form_options:
+                        label: app.admin.ui.modules.university.university.properties.max_students
+                        type: equal
+                    options:
+                        type: equal
+                name:
+                    type: like
+                    form_options:
+                        field_name: name
+                        label: app.admin.ui.modules.university.university.properties.name
+            actions:
+                main:
+                    create:
+                        type: create

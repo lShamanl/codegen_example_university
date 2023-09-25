@@ -1,0 +1,31 @@
+app:
+    admin:
+        ui:
+            university.universities: Universities
+            new_university.university: 'Add University'
+            edit_university.university: 'Edit University'
+            show_university.university: University
+            modules:
+                university:
+                    university:
+                        properties:
+                            id: Id
+                            created_at: CreatedAt
+                            updated_at: UpdatedAt
+                            description: Description
+                            max_students: MaxStudents
+                            name: Name
+                        enums: {  }
+                        enum_colors: {  }
+                        flash:
+                            success: success
+                            university_not_exists: 'university not exists'
+                        relations:
+                            students: Students
+                            student: Student
+                        actions:
+                            add_student: 'Add Student'
+                        other_labels: {  }
+            menu:
+                university:
+                    university.list: Universities

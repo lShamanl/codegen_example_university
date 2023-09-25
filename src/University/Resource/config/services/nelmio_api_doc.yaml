@@ -1,0 +1,37 @@
+nelmio_api_doc:
+    areas:
+        default:
+            path_patterns:
+                - /api/admin/university
+    models:
+        names:
+            -
+                alias: 'University | University | Search | QueryParams'
+                type: App\University\Entry\Http\Admin\Api\Action\University\Search\QueryParams
+            -
+                alias: 'University | Student | Search | QueryParams'
+                type: App\University\Entry\Http\Admin\Api\Action\Student\Search\QueryParams
+            -
+                alias: 'University | University | Create | InputContract'
+                type: App\University\Entry\Http\Admin\Api\Action\University\Create\InputContract
+            -
+                alias: 'University | University | Edit | InputContract'
+                type: App\University\Entry\Http\Admin\Api\Action\University\Edit\InputContract
+            -
+                alias: 'University | University | Remove | InputContract'
+                type: App\University\Entry\Http\Admin\Api\Action\University\Remove\InputContract
+            -
+                alias: 'University | Student | Create | InputContract'
+                type: App\University\Entry\Http\Admin\Api\Action\Student\Create\InputContract
+            -
+                alias: 'University | Student | Edit | InputContract'
+                type: App\University\Entry\Http\Admin\Api\Action\Student\Edit\InputContract
+            -
+                alias: 'University | Student | Remove | InputContract'
+                type: App\University\Entry\Http\Admin\Api\Action\Student\Remove\InputContract
+            -
+                alias: 'University | Student | CommonOutputContract'
+                type: App\University\Entry\Http\Admin\Api\Contract\Student\CommonOutputContract
+            -
+                alias: 'University | University | CommonOutputContract'
+                type: App\University\Entry\Http\Admin\Api\Contract\University\CommonOutputContract

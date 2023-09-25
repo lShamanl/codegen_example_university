@@ -1,0 +1,3 @@
+university_http:
+    resource: ../../../../../src/University/Entry/Http/
+    type: annotation

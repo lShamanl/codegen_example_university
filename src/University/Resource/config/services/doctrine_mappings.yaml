@@ -1,0 +1,9 @@
+doctrine:
+    orm:
+        mappings:
+            App\University:
+                is_bundle: false
+                type: attribute
+                dir: '%kernel.project_dir%/src/University/Domain'
+                prefix: App\University\Domain
+                alias: App_University

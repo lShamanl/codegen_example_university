@@ -1,0 +1,8 @@
+sylius_resource:
+    resources:
+        app.university.student:
+            templates: admin/layout/crud
+            driver: doctrine/orm
+            classes:
+                model: App\University\Domain\Student\Student
+                controller: App\University\Entry\Http\Admin\Sylius\Controller\Student\StudentController

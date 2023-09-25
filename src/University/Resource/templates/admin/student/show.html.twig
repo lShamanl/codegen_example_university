@@ -1,0 +1,46 @@
+<div class="ui segment">
+    <table class="ui very1 basic collapsing celled table">
+        <tbody>
+        <tr class="item">
+            <td><strong>{{ 'app.admin.ui.modules.university.student.properties.id'|trans }}:</strong></td>
+            <td>{{ resource.id }}</td>
+        </tr>
+        <tr class="item">
+            <td><strong>{{ 'app.admin.ui.modules.university.student.properties.created_at'|trans }}:</strong></td>
+            <td>{{ resource.createdAt|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr class="item">
+            <td><strong>{{ 'app.admin.ui.modules.university.student.properties.updated_at'|trans }}:</strong></td>
+            <td>{{ resource.updatedAt|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr class="item">
+            <td><strong>{{ 'app.admin.ui.modules.university.student.properties.birth_day'|trans }}:</strong></td>
+            <td>{{ resource.birthDay|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr class="item">
+            <td><strong>{{ 'app.admin.ui.modules.university.student.properties.first_name'|trans }}:</strong></td>
+            <td>{{ resource.firstName }}</td>
+        </tr>
+        <tr class="item">
+            <td><strong>{{ 'app.admin.ui.modules.university.student.properties.last_name'|trans }}:</strong></td>
+            <td>{{ resource.lastName }}</td>
+        </tr>
+        <tr class="item">
+            <td><strong>{{ 'app.admin.ui.modules.university.student.properties.middle_name'|trans }}:</strong></td>
+            <td>{{ resource.middleName }}</td>
+        </tr>
+        <tr class="item">
+            <td><strong>{{ 'app.admin.ui.modules.university.student.relations.university'|trans }}:</strong></td>
+            <td>{% include '@university/admin/university/link-to-show.html.twig' with {'data': resource.university} %}</td>
+        </tr>
+        </tbody>
+     </table>
+    <div class="ui buttons">
+        <a href="{{ path("app_university.student_update", {"id": resource.id} ) }}" class="ui labeled icon button">
+            <i class="pencil icon"></i>
+            {{ 'app.admin.ui.edit' | trans }}
+        </a>
+        {% import '@SyliusUi/Macro/buttons.html.twig' as buttons %}
+        {{ buttons.delete(path("app_university.student_delete", {"id": resource.id} ), '', true, resource.id) }}
+    </div>
+</div>

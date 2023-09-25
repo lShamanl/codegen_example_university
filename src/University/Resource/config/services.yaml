@@ -1,0 +1,20 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+    _instanceof:
+        Doctrine\Common\EventSubscriber:
+            tags:
+                name: doctrine.event_subscriber
+                connection: default
+        App\Common\Entry\Http\Admin\Menu\SectionBuilderInterface:
+            tags:
+                - app.section_builder
+    App\University\:
+        resource: '%kernel.project_dir%/src/University/'
+        exclude:
+            - ../Resource
+    App\University\Entry\Http\:
+        resource: '%kernel.project_dir%/src/University/Entry/Http/'
+        tags:
+            - controller.service_arguments
